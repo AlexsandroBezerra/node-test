@@ -1,0 +1,53 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main h1 {
+  margin: 32px 0;
+}
+
+.main form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.main form input {
+  margin: 18px 0;
+  padding: 12px;
+  font-weight: medium;
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+.button {
+  padding: 12px;
+  background: #2B63FF;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.main form button:hover {
+  background: #1A52EE;
+}
+
+.link {
+  color: #2B63FF;
+}
+
+.shareLink {
+  display: block;
+  margin: 32px 0;
+  text-align: center;
+}
