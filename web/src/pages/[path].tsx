@@ -31,8 +31,7 @@ export default function CustomPage({ page }: CustomPageProps) {
 
       setShowDeepLink(true)
     }
-
-  }, [])
+  }, [page])
 
   if(isFallback) {
     return (
