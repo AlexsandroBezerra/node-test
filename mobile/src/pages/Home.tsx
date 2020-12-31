@@ -12,6 +12,8 @@ function Home() {
 
   const handleDynamicLink = useCallback(
     (link: Link) => {
+      console.log(link);
+
       if (link) {
         const {url} = link;
 

@@ -7,11 +7,9 @@ export default async function generateDeepLink(path: string) {
       domainUriPrefix: process.env.FIREBASE_URL_PREFIX,
       link: `${process.env.WEB_APP_URL}/${path}`,
       androidInfo: {
-        androidPackageName: 'com.mobile'
+        androidPackageName: 'com.mobile',
+        androidFallbackLink: `${process.env.WEB_APP_URL}/mobile/${path}`
       }
-    },
-    suffix: {
-      option: "SHORT"
     }
   })
 

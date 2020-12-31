@@ -11,6 +11,10 @@ const {Navigator, Screen} = createStackNavigator();
 function App() {
   useEffect(() => {
     messaging().subscribeToTopic('notification');
+
+    messaging().setBackgroundMessageHandler(async (remoteMessage) => {
+      console.log('Message handled in the background!', remoteMessage);
+    });
   }, []);
 
   return (

@@ -5,9 +5,9 @@ import DefaultErrorPage from 'next/error'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 
-import api from '../services/api'
+import api from '../../services/api'
 
-import styles from '../styles/main.module.css'
+import styles from '../../styles/main.module.css'
 
 interface CustomPageProps {
   page: {
@@ -22,17 +22,6 @@ interface CustomPageProps {
 export default function CustomPage({ page }: CustomPageProps) {
   const [showDeepLink, setShowDeepLink] = useState(false)
   const { isFallback } = useRouter()
-
-  const handleShare = useCallback(async () => {
-    if (page) {
-      if(!page.shared) {
-        await api.post(`pages/${page.path}/share`)
-      }
-
-      setShowDeepLink(true)
-    }
-
-  }, [])
 
   if(isFallback) {
     return (
@@ -63,13 +52,13 @@ export default function CustomPage({ page }: CustomPageProps) {
       <div className={styles.main}>
         <h1>This page is for {page.name}</h1>
 
-        <button
+        <a
           type="button"
           className={styles.button}
-          onClick={handleShare}
+          href={process.env.NEXT_PUBLIC_ANDROID_APK_URL}
         >
-          Share
-        </button>
+          Download Android App
+        </a>
 
         {showDeepLink && (
           <strong className={styles.shareLink}>
